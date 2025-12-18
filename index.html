@@ -1,6 +1,381 @@
-<html>
-  <head></head>
-  <body>
-    Halo sofyan
-  </body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Guru Mengaji Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- PENGATURAN DASAR (CSS) --- */
+        :root {
+            --primary-color: #2E8B57; /* Sea Green */
+            --secondary-color: #DAA520; /* Goldenrod */
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fcfcfc;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Amiri', serif; /* Font bergaya arab/klasik untuk Judul */
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-family: 'Amiri', serif;
+        }
+
+        header ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header ul li {
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        header ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION (BANNER UTAMA) --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(46, 139, 87, 0.9), rgba(30, 90, 56, 0.9)), url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px; /* Kompensasi navbar fixed */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: #b8860b;
+            transform: scale(1.05);
+        }
+
+        /* --- TENTANG SAYA --- */
+        .about {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img {
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%; /* Membuat foto bulat */
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- PROGRAM BELAJAR --- */
+        .services {
+            padding: 80px 0;
+            background: var(--light-color);
+            text-align: center;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* --- TESTIMONI / PENGALAMAN --- */
+        .stats {
+            padding: 60px 0;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* --- KONTAK --- */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        /* --- RESPONSIVE (UNTUK HP) --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+            header ul { display: none; } /* Menu disembunyikan di HP agar simpel */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Ustadz/ah [Nama Anda]</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#services">Program</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Belajar Al-Qur'an dengan Sepenuh Hati</h1>
+            <p>Membangun generasi Qur'ani dengan metode pembelajaran yang santun, tartil, dan menyenangkan.</p>
+            <a href="#contact" class="btn">Mulai Belajar Sekarang</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://placehold.co/400x400/2E8B57/white?text=Foto+Anda" alt="Foto Profil Guru Mengaji">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p>Assalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+                    <br>
+                    <p>Saya <strong> Muhammad Sofyan Al-Anshari </strong>, seorang pengajar Al-Qur'an bersertifikasi dengan pengalaman lebih dari 6 tahun. Saya percaya bahwa setiap murid memiliki kecepatan belajar yang unik, sehingga saya menerapkan pendekatan personal agar murid merasa nyaman dan mencintai Al-Qur'an.</p>
+                    <br>
+                    <p><strong>Kualifikasi:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Lulusan Yayasan Tahfidz Darusshoamd </li>
+                        <li>Sertifikasi Tahsin & Tajwid SMK Islam Tahfidz </li>
+                        <li>Hafidz 30 Juz</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2>5+</h2>
+                    <p>Tahun Pengalaman</p>
+                </div>
+                <div class="stat-item">
+                    <h2>100+</h2>
+                    <p>Murid Diajar</p>
+                </div>
+                <div class="stat-item">
+                    <h2>Flexible</h2>
+                    <p>Waktu & Tempat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Program Pembelajaran</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Iqra & Dasar</h3>
+                    <p>Pengenalan huruf hijaiyah untuk anak-anak maupun dewasa pemula dengan metode yang mudah dipahami.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-quran"></i>
+                    <h3>Tahsin & Tajwid</h3>
+                    <p>Memperbaiki bacaan Al-Qur'an agar sesuai dengan makhraj dan hukum tajwid yang benar.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-star"></i>
+                    <h3>Tahfidz (Hafalan)</h3>
+                    <p>Bimbingan menghafal Al-Qur'an (Juz 30 atau sesuai target) dengan setoran rutin dan murojaah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <p style="margin-bottom: 30px;">Silakan konsultasikan kebutuhan belajar mengaji Anda atau putra-putri Anda.</p>
+            
+            <div class="contact-box">
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <strong>WhatsApp:</strong> 
+                    <a href="https://wa.me/6281234567890" target="_blank" style="color: var(--primary-color);">+62 812-3456-7890</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <strong>Email:</strong> email.Muhammadsofyan@contoh.com
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Lokasi:</strong> Kab.lombok timur
+                </div>
+                <br>
+                <a href="https://wa.me/6283830430485?text=Assalamualaikum,%20saya%20ingin%20bertanya%20tentang%20les%20mengaji." class="btn">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 [Muhammad Sofyan] - Guru Mengaji Profesional</p>
+    </footer>
+
+</body>
 </html>
